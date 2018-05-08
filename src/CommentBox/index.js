@@ -29,7 +29,9 @@ export class CommentBox extends React.Component {
     const CommentBoxStyle = {
       backgroundColor: 'white',
       border: '1px solid red',
-      marginTop: '3.5vh',
+      margin: '0.5vh auto',
+      maxWidth: '1300px',
+      // maxWidth: '80%'
     };
 
     const comments = this._getComments();
