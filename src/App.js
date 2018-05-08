@@ -1,20 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { Grid } from 'semantic-ui-react'
+
+import { CommentBox } from './CommentBox';
+import NavBar from './NavBar';
 import './App.css';
+import GridExampleCelled from './GridExampleCelled';
+
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+  return (
+    <Grid celled className="App" >
+      <Grid.Row verticalAlign='top'>
+        <Grid.Column >
+          <NavBar />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered>
+        <Grid.Column width={14}>
+          <CommentBox />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <GridExampleCelled />
+      </Grid.Row>
+    </Grid>
+  );
   }
 }
 

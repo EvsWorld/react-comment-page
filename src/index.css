@@ -1,5 +1,11 @@
 body {
+  background-image: linear-gradient(bottom, #E9E9E9 70%,#369BDD 30%);
+  background-image: -o-linear-gradient(bottom, #E9E9E9 70%,#369BDD 30%);
+  background-image: -moz-linear-gradient(bottom, #E9E9E9 70%, #369BDD 30%);
+  background-image: -webkit-linear-gradient(bottom,#E9E9E9 70%, #369BDD 30%);
+  background-image: -ms-linear-gradient(bottom,#E9E9E9 70%, #369BDD 30%);
+
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-repeat: no-repeat;
 }
