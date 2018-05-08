@@ -15,11 +15,11 @@ export default class CommentBox extends React.Component {
         {
           id: 1,
           author: 'Morgan McCircuit',
-          body: 'Great picture!'
+          body: 'Morgan McCircuits Body'
         }, {
           id: 2,
           author: 'Bending Bender',
-          body: 'Excellent stuff'
+          body: 'Bending Binders Body'
         }
       ]
     }
@@ -31,27 +31,26 @@ export default class CommentBox extends React.Component {
       border: '1px solid red',
       margin: '0.5vh auto',
       maxWidth: '1500px',
+      padding: '0'
       // maxWidth: '80%'
     };
 
     const comments = this._getComments();
     let commentNodes;
-    let buttonText = 'Show comments';
-
-    if (this.state.showComments) {
-      buttonText = 'Hide comments';
-      commentNodes = <div>{comments}</div>;
-    }
+    // let buttonText = 'Show comments';
+    //
+    // if (this.state.showComments) {
+    //   buttonText = 'Hide comments';
+    //   commentNodes = <div>{comments}</div>;
+    // }
     return (
       <Segment style={CommentBoxStyle} className="CommentBox">
-        <h3>Comments</h3>
-        <hr/>
-        <h4>{this._getCommentsTitle(comments.length)}</h4>
-        {commentNodes}
+        <Segment>Alex Martinger</Segment>
+
+        {/* {commentNodes} */}
+        <Segment>{comments}</Segment>
         <CommentForm addComment={this._addComment.bind(this)}/>
-        <Button onClick={this._handleClick.bind(this)}>{buttonText}</Button>
-        <br/>
-        <br/>
+        {/* <Button onClick={this._handleClick.bind(this)}>{buttonText}</Button> */}
 
       </Segment>
     );
@@ -82,13 +81,13 @@ export default class CommentBox extends React.Component {
     });
   }
 
-  _getCommentsTitle(commentCount) {
-    if (commentCount === 0) {
-      return 'No comments yet';
-    } else if (commentCount === 1) {
-      return '1 comment';
-    } else {
-      return `${commentCount} comments`;
-    }
-  }
+  // _getCommentsTitle(commentCount) {
+  //   if (commentCount === 0) {
+  //     return 'No comments yet';
+  //   } else if (commentCount === 1) {
+  //     return '1 comment';
+  //   } else {
+  //     return `${commentCount} comments`;
+  //   }
+  // }
 }

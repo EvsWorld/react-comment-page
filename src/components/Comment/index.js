@@ -1,29 +1,29 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Item, Image } from 'semantic-ui-react';
 
 
 class Comment extends React.Component {
   render() {
-    const segmentStyle = {
+    const itemStyle = {
       // border: '1px solid pink',
       backgroundColor: 'rgb(88, 123, 231)',
-      margin: '20px 100px',
+      margin: '2em auto',
 
     };
 
     return (
-      <div>
-        <p>Author in 'Content' component: {this.props.author}</p>
-        <hr/> {/* <p className="panel-body">{this.props.body}</p> */}
-        <div>
-          <a href="#">
-            Delete comment
-          </a>
-        </div>
-        <Segment className="vertical" style={segmentStyle}>Example Segment!! {this.props.body}
-        </Segment>
+      <Item style={itemStyle}>
+        <Item.Image size='small' src='./profilePic1.png' />
+        <Item.Content>
+        <Item.Header as='a'>Header</Item.Header>
+        <Item.Meta>Time</Item.Meta>
+        <Item.Description>
+          {this.props.body}
+        </Item.Description>
+        <Item.Extra>Additional Details</Item.Extra>
+      </Item.Content>
 
-      </div>
+      </Item>
     );
   }
 }
