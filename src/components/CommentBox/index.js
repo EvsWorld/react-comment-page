@@ -5,7 +5,7 @@ import CommentForm from '../CommentForm';
 import Comment from '../Comment';
 
 
-export class CommentBox extends React.Component {
+export default class CommentBox extends React.Component {
   constructor() {
     super();
 
@@ -30,7 +30,7 @@ export class CommentBox extends React.Component {
       backgroundColor: 'white',
       border: '1px solid red',
       margin: '0.5vh auto',
-      maxWidth: '1300px',
+      maxWidth: '1500px',
       // maxWidth: '80%'
     };
 

@@ -35,13 +35,13 @@ export default class NavBar extends Component {
 
         <Menu.Menu position='right'>
           <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-           <Icon name='calender'/>
+           <Icon name='browser outline'/>
           </Menu.Item>
-          <Menu.Item name='settings' active={activeItem === 'settings'} onClick={this.handleItemClick}>
+          <Menu.Item name='envelope' active={activeItem === 'envelope'} onClick={this.handleItemClick}>
            <Icon name='outline envelope'/>
           </Menu.Item>
           <Menu.Item name='img' active={activeItem === 'img'} onClick={this.handleItemClick}>
-            <Icon> <Image src='../images/keira-knightley.jpg' size='large' circular /> </Icon>
+            <Icon> <Image src='../images/keira-knightley3.png' size='large' circular /> </Icon>
           </Menu.Item>
         </Menu.Menu>
       </Menu>
