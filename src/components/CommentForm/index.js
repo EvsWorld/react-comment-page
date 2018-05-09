@@ -2,7 +2,23 @@ import React from 'react';
 import { Form, Grid, Button, Segment, Container} from 'semantic-ui-react';
 
 class CommentForm extends React.Component {
-  formInput = React.createRef();
+  render() {
+    const formStyles = {
+      border: '1px solid green'
+    }
+
+    return (
+      <Form style={formStyles} onSubmit={this._handleSubmit}>
+        <textarea
+          placeholder="Start typing your message or drop file..."
+          ref={(textarea) => this._body = textarea}>
+        </textarea>
+        <Button>
+          Post comment
+        </Button>
+      </Form>
+    );
+  }
 
   _addComment = (body) => {
     const comment = {
@@ -18,27 +34,9 @@ class CommentForm extends React.Component {
     event.preventDefault();
 
     // let author = this._author;
-    const body = this.formInput.value.value;
+    let body = this._body;
 
-    this.props.addComment( body);
-  }
-
-  render() {
-    // const { body } = this.state.comments;
-    const formStyles = {
-      border: '2px solid green'
-    }
-
-    return (
-      <Form style={formStyles} onSubmit={this._handleSubmit}>
-        <Form.Input
-          placeholder='Start typing your message or drop file...'
-          value={this.props.body}
-          ref={this.formInput} >
-        </Form.Input>
-        <Form.Button content='Post comment' />
-      </Form>
-    );
+    this.props.addComment( body.value);
   }
 }
 

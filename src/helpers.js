@@ -27,6 +27,6 @@ export function canEdit(startTime) {
   console.log('limit = ', moment(limit).format());
   console.log('now - startTime = ', now - startTime);
   console.log('limit = ', limit);
-  return ( now - startTime < limit)
-  // return true
+  // return ( now - startTime < limit)
+  return true
 };

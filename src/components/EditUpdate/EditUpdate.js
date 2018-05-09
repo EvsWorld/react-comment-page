@@ -3,9 +3,6 @@ import { Segment } from 'semantic-ui-react';
 
 import { canEdit } from '../../helpers';
 
-const moment = require('moment');
-
-
 export default class EditUpdate extends Component {
   state = {
     value: this.props.body,
@@ -44,7 +41,8 @@ export default class EditUpdate extends Component {
     return <Segment onDoubleClick={this.changeEditMode}>
       From internal state:  {this.state.value} <br/>
       From higher state: {this.props.body}   <br/>
-      Time comment posted: {moment(this.props.time).format()}
+      <br/>
+      Time comment posted: {this.props.time}
     </Segment>
   }
 
