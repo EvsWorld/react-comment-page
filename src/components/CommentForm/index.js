@@ -25,6 +25,7 @@ class CommentForm extends React.Component {
       id: this.state.comments.length + 1,
       body,
       time,
+      isInEditMode: false
     };
     this.setState({
       comments: this.state.comments.concat([comment])
@@ -33,8 +34,6 @@ class CommentForm extends React.Component {
 
   _handleSubmit = (event) => {
     event.preventDefault();
-
-    // let author = this._author;
     let body = this._body;
     let time = new Date();
     this.props.addComment( body.value, time);

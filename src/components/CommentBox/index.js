@@ -7,6 +7,7 @@ import EditUpdate from '../EditUpdate';
 
 
 export default class CommentBox extends React.Component {
+  
   state = {
     comments: [
       {

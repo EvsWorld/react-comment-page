@@ -5,17 +5,17 @@ import { canEdit } from '../../helpers';
 const moment = require('moment');
 
 export default class EditUpdate extends Component {
-  // state = {
-  //   value: this.props.body,
-  //   isInEditMode: false
-  // }
+  // This is local state, being used just for UI logic
+  state = {
+    isInEditMode: false
+  }
 
   changeEditMode = () => {
-    if (canEdit(this.props.time)) {
+    // if (canEdit(this.props.time)) {
       this.setState({
-        isInEditMode: !this.props.isineditmode
+        isInEditMode: !this.state.isInEditMode
       })
-    }
+    // }
   }
 
   updateComponentValue = () => {
@@ -41,14 +41,14 @@ export default class EditUpdate extends Component {
   renderDefaultView = () => {
     return <Segment onDoubleClick={this.changeEditMode}>
       {/* From internal state:  {this.state.value} <br/> */}
-      From higher state: {this.props.body}   <br/>
+      this.props.body: {this.props.body}   <br/>
       <br/>
       Time comment posted: {moment(this.props.time).format()}
     </Segment>
   }
 
   render() {
-    return this.props.isineditmode ?
+    return this.state.isInEditMode ?
     this.renderEditView() :
     this.renderDefaultView()
 
