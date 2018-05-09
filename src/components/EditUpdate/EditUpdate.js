@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import { Segment } from 'semantic-ui-react';
 
 import { canEdit } from '../../helpers';
+const moment = require('moment');
 
 export default class EditUpdate extends Component {
-  state = {
-    value: this.props.body,
-    isInEditMode: false
-  }
+  // state = {
+  //   value: this.props.body,
+  //   isInEditMode: false
+  // }
 
   changeEditMode = () => {
     if (canEdit(this.props.time)) {
       this.setState({
-        isInEditMode: !this.state.isInEditMode
+        isInEditMode: !this.props.isineditmode
       })
     }
   }
@@ -28,8 +29,8 @@ export default class EditUpdate extends Component {
     return <div>
       <input
         type="text"
-        // defaultValue={this.state.value}
-        defaultValue={this.props.body}
+        defaultValue={this.state.value}
+        // defaultValue={this.props.body}
         ref="theTextInput"
       />
       <button onClick={this.changeEditMode}>Cancel</button>
@@ -39,15 +40,15 @@ export default class EditUpdate extends Component {
 
   renderDefaultView = () => {
     return <Segment onDoubleClick={this.changeEditMode}>
-      From internal state:  {this.state.value} <br/>
+      {/* From internal state:  {this.state.value} <br/> */}
       From higher state: {this.props.body}   <br/>
       <br/>
-      Time comment posted: {this.props.time}
+      Time comment posted: {moment(this.props.time).format()}
     </Segment>
   }
 
   render() {
-    return this.state.isInEditMode ?
+    return this.props.isineditmode ?
     this.renderEditView() :
     this.renderDefaultView()
 

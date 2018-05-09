@@ -20,10 +20,11 @@ class CommentForm extends React.Component {
     );
   }
 
-  _addComment = (body) => {
+  _addComment = (body, time ) => {
     const comment = {
       id: this.state.comments.length + 1,
-      body
+      body,
+      time,
     };
     this.setState({
       comments: this.state.comments.concat([comment])
@@ -35,8 +36,8 @@ class CommentForm extends React.Component {
 
     // let author = this._author;
     let body = this._body;
-
-    this.props.addComment( body.value);
+    let time = new Date();
+    this.props.addComment( body.value, time);
   }
 }
 

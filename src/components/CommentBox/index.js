@@ -74,7 +74,7 @@ export default class CommentBox extends React.Component {
   _getComments = () => {
     return this.state.comments.map((comment) => {
       return (
-        <Comment author={comment.author} body={comment.body} key={comment.id}/>
+        <Comment author={comment.author} body={comment.body} key={comment.id} />
       );
     });
   }
@@ -82,7 +82,7 @@ export default class CommentBox extends React.Component {
   _getCommentsEdit = () => {
     return this.state.comments.map((comment) => {
       return (
-        <EditUpdate key={comment.id} body={comment.body} time={comment.time}/>
+        <EditUpdate key={comment.id} body={comment.body} time={comment.time} isineditmode={comment.isInEditMode}/>
       );
     });
   }
