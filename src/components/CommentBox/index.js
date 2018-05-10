@@ -7,21 +7,18 @@ import EditUpdate from '../EditUpdate';
 
 
 export default class CommentBox extends React.Component {
-  
   state = {
     comments: [
       {
         id: 1,
         author: 'Morgan McCircuit',
         body: 'Morgan McCircuits Body',
-        time: 1525817737350,
-        isInEditMode: false
+        time: 1525817737350
       }, {
         id: 2,
         author: 'Bending Bender',
         body: 'Bending Binders Body',
-        time: 1525817785857,
-        isInEditMode: false
+        time: 1525817785857
       }
     ]
   }
@@ -83,7 +80,7 @@ export default class CommentBox extends React.Component {
   _getCommentsEdit = () => {
     return this.state.comments.map((comment) => {
       return (
-        <EditUpdate key={comment.id} body={comment.body} time={comment.time} isineditmode={comment.isInEditMode}/>
+        <EditUpdate key={comment.id} body={comment.body} time={comment.time} />
       );
     });
   }

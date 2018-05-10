@@ -7,15 +7,16 @@ const moment = require('moment');
 export default class EditUpdate extends Component {
   // This is local state, being used just for UI logic
   state = {
+    value: this.props.body,
     isInEditMode: false
   }
 
   changeEditMode = () => {
-    // if (canEdit(this.props.time)) {
+    if (canEdit(this.props.time)) {
       this.setState({
         isInEditMode: !this.state.isInEditMode
       })
-    // }
+    }
   }
 
   updateComponentValue = () => {
@@ -29,8 +30,7 @@ export default class EditUpdate extends Component {
     return <div>
       <input
         type="text"
-        defaultValue={this.state.value}
-        // defaultValue={this.props.body}
+        defaultValue={this.props.body}
         ref="theTextInput"
       />
       <button onClick={this.changeEditMode}>Cancel</button>
@@ -40,10 +40,10 @@ export default class EditUpdate extends Component {
 
   renderDefaultView = () => {
     return <Segment onDoubleClick={this.changeEditMode}>
-      {/* From internal state:  {this.state.value} <br/> */}
+      From internal state:  {this.state.value} <br/>
       this.props.body: {this.props.body}   <br/>
       <br/>
-      Time comment posted: {moment(this.props.time).format()}
+      Time comment posted: {moment(this.props.time).format('h:mm')}
     </Segment>
   }
 
