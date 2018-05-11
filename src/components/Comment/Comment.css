@@ -1,20 +1,36 @@
 Item {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   display: flex;
 }
 
-
-
-.description {
-  border: 2px solid pink;
+#description {
+  border-style: none;
+  border: none;
+  word-wrap:break-word;
+  padding-right: 4em;
 }
+
 #header {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   justify-content:space-between;
   /* align-items: flex-end; */
 }
 
-.inheader {
-  
+.time {
+  font-size: .7em;
+  font-weight: 400;
+  color: #beb9b9;
+}
+
+#confirm-btn {
+  background-color: green;
+  color: #E9E9E9;
+  /* padding: .7em 2em; */
+  /* align-self: center; */
+  /* margin: 3em; */
+}
+#cancel-btn {
+  background-color: red;
+  color: #E9E9E9;
 }

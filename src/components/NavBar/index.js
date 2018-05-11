@@ -13,7 +13,7 @@ export default class NavBar extends Component {
       padding: '0 5.5%',
       backgroundColor: '#278ACE',
       height: '4.5vh',
-      border: '1px solid rgb(227, 231, 28)'
+      // border: '1px solid rgb(227, 231, 28)'
     }
 
     const { activeItem } = this.state;

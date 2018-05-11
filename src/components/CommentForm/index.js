@@ -7,12 +7,13 @@ import './CommentForm.css';
 class CommentForm extends React.Component {
   render() {
     const formStyles = {
-      border: '2px solid green'
+      // border: '2px solid green'
+      backgroundColor: '#E9E9E9'
     }
 
     return (
       <Form style={formStyles} onSubmit={this._handleSubmit}>
-        <textarea
+        <textarea id='textarea'
           placeholder="Start typing your message or drop file..."
           ref={(textarea) => this._body = textarea}>
         </textarea>

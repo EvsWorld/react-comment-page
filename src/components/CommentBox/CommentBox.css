@@ -13,3 +13,14 @@ Segment {
   font-size: 0.7em;
   margin-left: .7em;
 }
+
+#day {
+  margin: 0.5em auto 0.5em 5em ;
+  color: #beb9b9;
+  font-weight: bold;
+}
+
+#divider {
+  margin: 0;
+  padding: 0;
+}

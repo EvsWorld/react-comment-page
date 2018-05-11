@@ -1,5 +1,6 @@
 Form {
   display: flex;
+  color: #E9E9E9;
 }
 
 #submit-btn {
@@ -8,4 +9,9 @@ Form {
   padding: .7em 2em;
   align-self: center;
   margin: 3em;
+}
+
+#textarea {
+  background: #E9E9E9;
+  border: 0;
 }

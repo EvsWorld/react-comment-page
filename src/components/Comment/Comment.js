@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Item, Segment } from 'semantic-ui-react';
+import { Button, Item, Segment } from 'semantic-ui-react';
 
 import { canEdit } from '../../helpers';
 
@@ -37,39 +37,36 @@ export default class Comment extends Component {
           defaultValue={this.props.body}
           ref="theTextInput"
         />
-        <button onClick={this.changeEditMode}>Cancel</button>
-        <button onClick={this.updateComponentValue}>Accept Changes</button>
+        <Button id='cancel-btn' onClick={this.changeEditMode}>Cancel</Button>
+        <Button id='confirm-btn' onClick={this.updateComponentValue}>Accept Changes</Button>
       </div>
     );
   }
 
   renderDefaultView = () => {
     return (
-      <Segment onDoubleClick={this.changeEditMode}>
-        From internal state:  {this.state.value} <br/>
-        {/* this.props.body: {this.props.body}   <br/> */}
-        {/* <br/> */}
-        {/* {moment(this.props.time).format('h:mm')} */}
-      </Segment>
+      <div onDoubleClick={this.changeEditMode}>
+        {this.state.value}
+      </div>
     );
   }
 
   render() {
     const itemStyle = {
-      border: '1px solid rgb(88, 123, 231)',
-      padding: '0 5em'
+      // border: '1px solid rgb(88, 123, 231)',
+      padding: '1em 5em',
+
     };
     return (
       <React.Fragment>
         <Item style={itemStyle}>
-          <Item.Image size='tiny'  src={require('../../images/waltwhitman.png')} />
+          <Item.Image size='tiny' circular src={this.props.foto} />
           <Item.Content>
             <Item.Header id='header'>
-              <div className="inheader">Commenter Name</div>
-              <div>{moment(this.props.time).format('h:mm')}</div>
+              <div>{this.props.author}</div>
+              <div className='time'>{moment(this.props.time).format('h:mm')}</div>
             </Item.Header>
-            {/* <Item.Header as='a'>Header</Item.Header> */}
-            <Item.Description>
+            <Item.Description id='description'>
               {this.state.isInEditMode ?
               this.renderEditView() :
               this.renderDefaultView()}
@@ -79,10 +76,6 @@ export default class Comment extends Component {
         </Item>
       </React.Fragment>
     );
-
-    return this.state.isInEditMode ?
-    this.renderEditView() :
-    this.renderDefaultView()
 
   }
 }

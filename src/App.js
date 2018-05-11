@@ -23,11 +23,11 @@ class App extends Component {
         <Grid.Column centered width={14}>
           <CommentBox />
         </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
+       </Grid.Row>
+      {/* <Grid.Row> 
         <GridExampleCelled />
         <LodashGridCompon />
-      </Grid.Row>
+      </Grid.Row> */}
     </Grid>
   );
   }
