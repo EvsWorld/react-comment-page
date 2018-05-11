@@ -3,23 +3,5 @@
   box-sizing: border-box;
 
 
-  .App {
 
-    text-align: center;
-    /* This was important for keeping background in place*/
-    /* display: flex; */
-    /* align-items: center; */ /* Not needed */
-    /* flex-direction: column;  /* Gets Nav and viewPort to stack */
-    /* justify-content: center; /* centers contents on 'main axis' (vertical in this case) */
-    min-height: 100vh;
-
-    /* centers immediate contents east-west (which is <App/> in this case) */
-    /* background-color: rgb(30, 156, 99); */
-
-  }
-
-  .no-padding {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
 }

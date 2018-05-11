@@ -32,13 +32,15 @@ export default class CommentBox extends React.Component {
       margin: '0.5vh auto',
       padding: '0',
     };
-    const nameStyle = {
+    const nameBox = {
       backgroundColor:'#E9E9E9',
+      padding: '1.5em 0',
+
     }
 
     return (
       <Segment.Group style={commentBoxStyle} className="CommentBox">
-        <Segment size='large' style={nameStyle}>
+        <Segment style={nameBox}>
           <div className='name'>Alex Martinger
             <span className='status'>
               <Icon padded name='circle' size='small' color='green' /> online

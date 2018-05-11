@@ -41,7 +41,7 @@ export default class NavBar extends Component {
            <Icon name='outline envelope'/>
           </Menu.Item>
           <Menu.Item name='img' active={activeItem === 'img'} onClick={this.handleItemClick}>
-            <Icon> <Image src='../images/keira-knightley3.png' size='large' circular /> </Icon>
+            <Icon> <Image src={require('../../images/keira-knightley.png')} size='large' circular /> </Icon>
           </Menu.Item>
         </Menu.Menu>
       </Menu>

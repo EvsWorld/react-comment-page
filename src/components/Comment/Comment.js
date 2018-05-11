@@ -57,7 +57,7 @@ export default class Comment extends Component {
   render() {
     const itemStyle = {
       border: '1px solid rgb(88, 123, 231)',
-      // margin: 'auto 5em',
+      padding: '0 5em'
     };
     return (
       <React.Fragment>
