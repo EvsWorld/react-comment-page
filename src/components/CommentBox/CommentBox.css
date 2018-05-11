@@ -1,0 +1,12 @@
+Segment {
+  /* margin: 0; */
+
+}
+.name {
+  margin: 0 5em;
+}
+
+.status {
+  font-size: 0.7em;
+  margin-left: .7em;
+}

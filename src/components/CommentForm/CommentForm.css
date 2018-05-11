@@ -1,0 +1,11 @@
+Form {
+  display: flex;
+}
+
+#submit-btn {
+  background-color: #369BDD;
+  color: #E9E9E9;
+  padding: .7em 2em;
+  align-self: center;
+  margin: 3em;
+}

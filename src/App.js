@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Grid, Icon } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import NavBar from './components/NavBar';
 import CommentBox from './components/CommentBox';
@@ -15,7 +15,7 @@ class App extends Component {
   return (
     <Grid className="App" >
       <Grid.Row >
-        <Grid.Column >
+        <Grid.Column centered>
           <NavBar />
         </Grid.Column>
       </Grid.Row>

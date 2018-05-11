@@ -1,10 +1,13 @@
 import React from 'react';
 import { Form, Grid, Button, Segment, Container} from 'semantic-ui-react';
 
+
+import './CommentForm.css';
+
 class CommentForm extends React.Component {
   render() {
     const formStyles = {
-      border: '1px solid green'
+      border: '2px solid green'
     }
 
     return (
@@ -13,9 +16,9 @@ class CommentForm extends React.Component {
           placeholder="Start typing your message or drop file..."
           ref={(textarea) => this._body = textarea}>
         </textarea>
-        <Button>
-          Post comment
-        </Button>
+        <button id='submit-btn' floated='right' medium>
+          SEND
+        </button>
       </Form>
     );
   }

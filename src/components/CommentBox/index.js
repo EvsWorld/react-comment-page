@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid, Button, Segment, Container } from 'semantic-ui-react';
+import { Grid, Button, Item, Segment, Icon, Container } from 'semantic-ui-react';
 
 import CommentForm from '../CommentForm';
+// import Comment from '../Comment';
 import Comment from '../Comment';
-import EditUpdate from '../EditUpdate';
 
+import './CommentBox.css';
 
 export default class CommentBox extends React.Component {
   state = {
@@ -25,30 +26,29 @@ export default class CommentBox extends React.Component {
 
 
   render() {
-    const CommentBoxStyle = {
+    const commentBoxStyle = {
       backgroundColor: 'white',
       border: '1px solid red',
       margin: '0.5vh auto',
-      maxWidth: '1500px',
-      padding: '0'
-      // maxWidth: '80%'
+      padding: '0',
     };
+    const nameStyle = {
+      backgroundColor:'#E9E9E9',
+    }
 
-    // const comments = this._getComments();
-    const comments = this._getCommentsEdit();
-    let commentNodes;
-    // let buttonText = 'Show comments';
-    //
-    // if (this.state.showComments) {
-    //   buttonText = 'Hide comments';
-    //   commentNodes = <div>{comments}</div>;
-    // }
     return (
-      <Segment style={CommentBoxStyle} className="CommentBox">
-        <Segment>Alex Martinger</Segment>
-        <Segment>{comments}</Segment>
+      <Segment.Group style={commentBoxStyle} className="CommentBox">
+        <Segment size='large' style={nameStyle}>
+          <div className='name'>Alex Martinger
+            <span className='status'>
+              <Icon padded name='circle' size='small' color='green' /> online
+            </span>
+          </div>
+        </Segment >
+        {/* <Segment>{comments}</Segment> */}
+        <Item.Group divided >{this._getComments()}</Item.Group>
         <CommentForm addComment={this._addComment}/>
-      </Segment>
+      </Segment.Group>
     );
   }
 
@@ -63,24 +63,10 @@ export default class CommentBox extends React.Component {
     });
   }
 
-  // _handleClick = () => {
-  //   this.setState({
-  //     showComments: !this.state.showComments
-  //   });
-  // }
-
   _getComments = () => {
     return this.state.comments.map((comment) => {
       return (
-        <Comment author={comment.author} body={comment.body} key={comment.id} />
-      );
-    });
-  }
-
-  _getCommentsEdit = () => {
-    return this.state.comments.map((comment) => {
-      return (
-        <EditUpdate key={comment.id} body={comment.body} time={comment.time} />
+        <Comment key={comment.id} body={comment.body} time={comment.time} />
       );
     });
   }
